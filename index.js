@@ -16,8 +16,9 @@ app.get('/chef',(req,res)=>{
     res.send(singleChef)
 })
 app.get('/chef/:id',(req,res)=>{
-    const id = req.params.id
-    const selectChef= singleChef.find(s=>s.id==id)
+    const id = parseInt(req.params.id)
+    
+    const selectChef= singleChef.find(s=>parseInt(s.id)===id)
     res.send(selectChef)
 })
 
